@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/layout_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/et_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_white"
+            android:hint="请输入账号"
+            android:paddingLeft="8dp"
+            android:textSize="16sp"
+            app:met_baseColor="#666666"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelText="账号"
+            app:met_floatingLabelTextSize="15sp"
+            app:met_textColorHint="#999999" />
+
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/et_psd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_white"
+            android:hint="请输入密码"
+            android:inputType="textPassword"
+            android:paddingLeft="8dp"
+            android:textSize="16sp"
+            app:met_baseColor="#666666"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelText="密码"
+            app:met_floatingLabelTextSize="15sp"
+            app:met_textColorHint="#999999" />
+
+
+        <Button
+            android:id="@+id/btn_commit"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/shape_commit"
+            android:text="登录"
+            android:textColor="@color/bg_white"
+            android:textSize="16sp" />
+    </LinearLayout>
+</LinearLayout>
