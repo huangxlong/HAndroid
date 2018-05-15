@@ -1,6 +1,7 @@
 package com.hxl.handroid.ui.adpater;
 
 import android.support.annotation.Nullable;
+import android.text.Html;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -43,7 +44,7 @@ public class ArticleAdapter extends BaseQuickAdapter<ArticleData.Article, BaseVi
         }
 
         helper.setText(R.id.tv_author, datas.author)
-                .setText(R.id.tv_title, datas.title)
+                .setText(R.id.tv_title, Html.fromHtml(datas.title))
                 .setText(R.id.tv_flag, datas.chapterName)
                 .setText(R.id.tv_time, datas.niceDate)
                 .addOnClickListener(R.id.tv_flag)

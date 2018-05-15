@@ -1,5 +1,6 @@
 package com.hxl.handroid.ui;
 
+import android.text.Html;
 import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.WebSettings;
@@ -36,8 +37,7 @@ public class WebActivity extends BaseActivity {
     protected void initView() {
         String articleLink = getIntent().getExtras().getString(LINK_URL);
         String articleTitle = getIntent().getExtras().getString(LINK_TITLE);
-        tvTitle.setText(articleTitle);
-
+        tvTitle.setText(Html.fromHtml(articleTitle));
         mAgentWeb = AgentWeb.with(this)
                 .setAgentWebParent(frameLayout, new LinearLayout.LayoutParams(-1, -1))
                 .useDefaultIndicator()

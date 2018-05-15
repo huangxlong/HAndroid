@@ -1,42 +1,45 @@
-package com.hxl.handroid.base;
+package com.hxl.handroid.entity;
 
 import java.io.Serializable;
 import java.util.List;
 
 /**
- * 文章列表
  * Created by Administrator
- * on 2018/5/9 星期三.
+ * on 2018/5/14 星期一.
  */
-public class ArticleData implements Serializable {
-    public int curPage;
-    public List<Article> datas;
+public class SearchData implements Serializable {
+    public int curpage;
     public int offset;
-    public boolean over;
+    public Boolean over;
     public int pageCount;
     public int size;
     public int total;
+    public List<SearchResultData> datas;
 
-    public class Article implements Serializable {
+
+    public class SearchResultData implements Serializable {
         public String apkLink;
         public String author;
-        public int chapterId;
         public String chapterName;
-        public boolean collect;
-        public int courseId;
         public String desc;
         public String envelopePic;
-        public int id;
         public String link;
         public String niceDate;
         public String origin;
-        public int originId;
         public String projectLink;
-        public int superChapterId;
-        public String superChapterName;
         public long publishTime;
+        public String superChapterName;
+        public String tags;
         public String title;
+        public int chapterId;
+        public int courseId;
+        public int id;
+        public int superChapterId;
+        public int type;
+        public int userId;
         public int visible;
         public int zan;
+        public Boolean collect;
+        public Boolean fresh;
     }
 }

@@ -67,16 +67,13 @@ public abstract class BaseFragment extends Fragment {
     protected void showLoadingDialog() {
         mContext = getActivity();
         if (isValidContext(mContext)) {
-            mContext.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    if (mLoadingDialog == null) {
-                        mLoadingDialog = new LoadingDialog(getActivity());
-                    }
-
-                    mLoadingDialog.setMessage(getString(R.string.text_loading));
-                    mLoadingDialog.show();
+            mContext.runOnUiThread(() -> {
+                if (mLoadingDialog == null) {
+                    mLoadingDialog = new LoadingDialog(getActivity());
                 }
+
+                mLoadingDialog.setMessage(getString(R.string.text_loading));
+                mLoadingDialog.show();
             });
         }
     }
@@ -84,28 +81,22 @@ public abstract class BaseFragment extends Fragment {
     protected void showLoadingDialog(final String text) {
         mContext = getActivity();
         if (isValidContext(mContext)) {
-            mContext.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    if (mLoadingDialog == null) {
-                        mLoadingDialog = new LoadingDialog(getActivity());
-                    }
-
-                    mLoadingDialog.setMessage(text);
-                    mLoadingDialog.show();
+            mContext.runOnUiThread(() -> {
+                if (mLoadingDialog == null) {
+                    mLoadingDialog = new LoadingDialog(getActivity());
                 }
+
+                mLoadingDialog.setMessage(text);
+                mLoadingDialog.show();
             });
         }
     }
 
     protected void hideLoadingDialog() {
         if (isValidContext(mContext)) {
-            mContext.runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    if (mLoadingDialog != null) {
-                        mLoadingDialog.dismiss();
-                    }
+            mContext.runOnUiThread(() -> {
+                if (mLoadingDialog != null) {
+                    mLoadingDialog.dismiss();
                 }
             });
         }

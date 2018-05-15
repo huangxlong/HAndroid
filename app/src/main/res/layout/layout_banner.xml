@@ -15,6 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="126dp"
         android:layout_marginLeft="5dp"
+        app:banner_default_image="@drawable/banner_def"
         android:layout_marginRight="5dp"
         app:indicator_drawable_selected="@drawable/banner_dot_act"
         app:indicator_drawable_unselected="@drawable/banner_dot"

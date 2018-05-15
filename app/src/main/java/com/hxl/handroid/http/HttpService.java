@@ -4,12 +4,15 @@ import com.hxl.handroid.base.ArticleData;
 import com.hxl.handroid.entity.BannerData;
 import com.hxl.handroid.entity.BaseRsp;
 import com.hxl.handroid.entity.LoginData;
+import com.hxl.handroid.entity.SearchData;
+import com.hxl.handroid.entity.SearchHotData;
 
 import java.util.List;
 
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 import rx.Observable;
@@ -80,5 +83,25 @@ public interface HttpService {
     @POST("lg/uncollect_originId/{id}/json")
     Observable<BaseRsp<ArticleData>> deleteCollectArticle(@Path("id") int id);
 
+
+    /**
+     * 获取搜索热词
+     *
+     * @return 搜索热词数据
+     */
+    @GET("hotkey/json")
+    Observable<BaseRsp<List<SearchHotData>>> getSearchHotData();
+
+
+    /**
+     * 关键词搜索
+     *
+     * @param page 搜索结果页数
+     * @param key  搜索关键词
+     * @return
+     */
+    @POST("article/query/{page}/json")
+    @FormUrlEncoded
+    Observable<BaseRsp<ArticleData>> getSearchResultData(@Path("page") int page, @Field("k") String key);
 
 }

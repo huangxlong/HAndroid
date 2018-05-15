@@ -20,4 +20,7 @@ public class AppConstant {
     public static final String BANNER_DATA = "banner_data";
     public static final String LOGIN_DATA = "login_data";
     public static final String ARTICLE_DATA = "article_data";
+
+    public static final String SEARCH_DATA = "search_data";
+    public static final String SEARCH_TITLE = "search_title";
 }

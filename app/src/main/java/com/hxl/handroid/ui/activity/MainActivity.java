@@ -170,6 +170,7 @@ public class MainActivity extends BaseActivity {
             case R.id.iv_home:
                 break;
             case R.id.iv_search:
+                startActivity(new Intent(MainActivity.this, SearchActivity.class));
                 break;
         }
     }
